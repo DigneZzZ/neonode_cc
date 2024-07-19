@@ -4,42 +4,32 @@ import PostPreview from "@/components/blog/PostPreviewB";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import { getAllPosts, sortMDByDate, sortMDByPinned } from "@/utils";
 
-const MAX_POSTS = 10;
+const MAX_POSTS = 15;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 const allPostsByPinned = sortMDByPinned(allPostsByDate);
 
 const tech: Array<{ title: string; desc: string; href: string }> = [
 	{
-		title: "Astro",
-		desc: "Build fast websites, faster.",
-		href: "https://astro.build",
+		title: "Openode.xyz",
+		desc: "Наше сообщество",
+		href: "https://openode.xyz",
 	},
 	{
-		title: "Astro Assets",
-		desc: "Built-in optimized asset support.",
-		href: "https://docs.astro.build/en/guides/assets/",
+		title: "Git.Openode.XYZ",
+		desc: "Наш независимый Git-репозиторий. Делаем копии важного",
+		href: "https://git.openode.xyz",
 	},
 	{
-		title: "Tailwind CSS",
-		desc: "Rapidly build modern websites without ever leaving your HTML.",
-		href: "https://tailwindcss.com",
+		title: "KiberLic",
+		desc: "Блог КиберЛиса",
+		href: "https://kiberlis.ru",
 	},
 	{
-		title: "Markdown",
-		desc: "Simple and easy-to-use markup language.",
+		title: "Bench.openode.xyz",
+		desc: "Бенч-тест сервера с несколькими локациями speedtest",
 		href: "https://www.markdownguide.org/",
-	},
-	{
-		title: "MDX",
-		desc: "Markdown for the component era.",
-		href: "https://mdxjs.com/",
-	},
-	{
-		title: "Astro Icon",
-		desc: "An easy to use Icon component for Astro.",
-		href: "https://github.com/natemoo-re/astro-icon#readme",
-	},
+	}
 ];
 
 ---
@@ -48,9 +38,9 @@ const tech: Array<{ title: string; desc: string; href: string }> = [
 	<section>
 		<h1 class="title">Hello World</h1>
 		<p class="mb-4 sm:mb-8">
-			Hey guys! This a theme for Astro. You can use this to as personal blog
-			or portfolio. If you want to know more about how you can customise and make it your
-			own, click on the github icon link below, and it will take you to the repo.
+			Всем привет! 
+			Это будет простым и открытым форматом блога.
+			Вы можете предлагать свои статьи - через PR в репозитории.
 		</p>
 		<div>
 			<span>You can find me on: </span>
