@@ -9,9 +9,9 @@ const posts = (await getCollection('blog', ({data}) => {
 const series = getUniqueWithCountByProperty("series", posts);
 ---
 
-<BaseLayout title="Series">
+<BaseLayout title="Серии">
 	<h1 class="title flex font-bold text-xl items-center mb-4"> 
-		Series
+		Серии
 	</h1>
 	<ul>
 		{series.map(([s, count]) => (
