@@ -12,7 +12,6 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
 	<slot />
 </a>
-<a href="/series">Серии</a>
 <style>
 a:before {
 	content: "./";

@@ -34,14 +34,14 @@ const url = new URL(Astro.request.url);
 				class="sm:hidden block py-2 sm:py-0" 
 				href="/tags"
 				title="tags"
-				aria-current={url.pathname === "tags" ? "page" : false}
+				aria-current={url.pathname === "tags" ? "page" : true}
 				data-astro-prefetch
 			>Tags</HeaderLink>
 			<HeaderLink 
 				class="sm:hidden block py-2 sm:py-0" 
 				href="/series"
 				title="series"
-				aria-current={url.pathname === "series" ? "page" : false}
+				aria-current={url.pathname === "series" ? "page" : true}
 				data-astro-prefetch
 			>Series</HeaderLink>
 		</div>
