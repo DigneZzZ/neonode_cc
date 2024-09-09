@@ -18,12 +18,12 @@ type SocialLink = {
 }
 
 export const siteConfig: Config = {
-  title: "Astro Theme Cody",
+  title: "Neonode.cc - Mind space blog",
   description: "",
-  lang: "en-GB",
+  lang: "ru-RU",
   profile: {
-    author: "Amy Dang",
-    description: "your bio description"
+    author: "TrustMe",
+    description: "Digital content creater"
   }
 }
 
@@ -36,9 +36,9 @@ export const socialLinks: Array<SocialLink> = [
   {
     icon: "mdi:github",
     friendlyName: "Github",
-    link: "https://github.com/kirontoo/astro-theme-cody",
+    link: "https://github.com/dignezzz",
   },
-  {
+ /**  {
     icon: "mdi:linkedin",
     friendlyName: "LinkedIn",
     link: "#",
@@ -47,7 +47,7 @@ export const socialLinks: Array<SocialLink> = [
     icon: "mdi:email",
     friendlyName: "email",
     link: "mailto:ndangamy@gmail.com",
-  },
+  },*/
   {
     icon: "mdi:rss",
     friendlyName: "rss",
@@ -57,23 +57,28 @@ export const socialLinks: Array<SocialLink> = [
 
 export const NAV_LINKS: Array<{ title: string, path: string }> = [
   {
-    title: "Home",
+    title: "Главная",
     path: "/",
   },
   {
-    title: "About",
+    title: "О проекте",
     path: "/about",
   },
   {
-    title: "Blog",
+    title: "Блог",
     path: "/blog",
   },
   {
-    title: "Projects",
+    title: "Проекты",
     path: '/projects'
   },
   {
-    title: "Archive",
+    title: "Архивы",
     path: '/archive'
+  },
+  {
+    title: "Серии",
+    path: '/series'
   }
+
 ];
