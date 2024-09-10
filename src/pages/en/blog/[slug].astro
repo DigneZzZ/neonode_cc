@@ -4,15 +4,20 @@ import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 import BlogPost from '@/layouts/BlogPost';
 import { getAllPosts } from '@/utils';
 
-export const getStaticPaths = (async () => {
-	const blogEntries = await getAllPosts();
-	return blogEntries.map((post) => ({
-		params: { slug: post.slug },
-		props: { post },
-	}));
-}) satisfies GetStaticPaths;
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+// Функция для генерации статических путей
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  const languages = ['en', 'ru']; // Укажите поддерживаемые языки
 
+  const paths = posts.flatMap((post) =>
+    languages.map((lang) => ({
+      params: { slug: `${lang}/${post.slug}` },
+      props: { lang, post },
+    }))
+  );
+
+  return { paths };
+}
 const { post } = Astro.props;
 const { Content } = await post.render();
 ---
