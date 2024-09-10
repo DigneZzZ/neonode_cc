@@ -1,18 +1,14 @@
 ---
 const currentLanguage = Astro.url.pathname.startsWith('/en') ? 'en' : 'ru';
+const targetLanguage = currentLanguage === 'en' ? 'ru' : 'en';
+const languageText = currentLanguage === 'en' ? 'Читать на Русском' : 'Read in English';
 
 function switchLanguage(lang: string) {
   const newPath = Astro.url.pathname.replace(/^\/(en|ru)/, '');
-  window.location.href = `/${lang}${newPath}`;
+  return `/${lang}${newPath}`;
 }
 ---
 
 <div>
-  <button id="switch-en" disabled={currentLanguage === 'en'}>English</button>
-  <button id="switch-ru" disabled={currentLanguage === 'ru'}>Русский</button>
-
-  <script is:inline>
-    document.getElementById('switch-en').onclick = () => switchLanguage('en');
-    document.getElementById('switch-ru').onclick = () => switchLanguage('ru');
-  </script>
+  <a href={switchLanguage(targetLanguage)}>{languageText}</a>
 </div>
