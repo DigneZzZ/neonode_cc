@@ -7,6 +7,7 @@ heroImage:
     alt: 'GitHub wallpaper'
 platform: Web
 website: https://openode.xyz
+tgGroup: https://t.me/+v8dK84LYCAhmOTcy
 order: 1
 ---
 
