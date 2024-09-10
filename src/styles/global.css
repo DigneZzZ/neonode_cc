@@ -106,8 +106,14 @@
   .prose-cody strong {
     font-weight: 700;
   }
-  .prose-sm :where(pre):not(:where([class~=not-prose],[class~=not-prose] *)) {
-    font-size: 1.15rem;
+  .prose-cody code,
+  .prose-cody pre {
+    font-size: 1rem; /* Измените это значение на нужный вам размер */
+    line-height: 1.5rem;
+  }
+  
+  .prose-cody pre {
+    @apply p-4; /* Добавление отступов для улучшения читаемости */
   }
 
   .prose-cody :where(code):not(:where([class~=not-prose],[class~=not-prose] *)) {
