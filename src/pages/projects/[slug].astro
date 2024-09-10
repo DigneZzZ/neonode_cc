@@ -2,6 +2,7 @@
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 import { getCollection } from "astro:content";
 import ProjectLayout from '../../layouts/Project.astro';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export const getStaticPaths = (async () => {
 	const allProjects = await getCollection("project", ({ data }) => {
@@ -17,7 +18,7 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { project } = Astro.props;
 const { Content } = await project.render();
 ---
-
+<LanguageSwitcher />
 <ProjectLayout project={project}>
 	<Content />
 </ProjectLayout>

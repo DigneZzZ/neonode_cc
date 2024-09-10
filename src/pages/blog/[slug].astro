@@ -3,6 +3,7 @@
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 import BlogPost from '../../layouts/BlogPost.astro';
 import { getAllPosts } from '@/utils';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export const getStaticPaths = (async () => {
 	const blogEntries = await getAllPosts();
@@ -16,7 +17,7 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { post } = Astro.props;
 const { Content } = await post.render();
 ---
-
+<LanguageSwitcher />
 <BlogPost post={post}>
 	<Content />
 </BlogPost>
