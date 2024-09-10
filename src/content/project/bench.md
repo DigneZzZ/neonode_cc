@@ -5,7 +5,9 @@ pubDate: 'Jul 11 2024'
 heroImage:
     url: '/images/saas.webp'
     alt: 'Marzban SaaS illustration'
-platform: Telegram
+platform: web
+website: https://bench.openode.xyz
+stack: 'php', 'js'
 order: 3
 ---
 
@@ -20,25 +22,25 @@ wget -qO- bench.openode.xyz | bash
 ### This script is Net Checker Script:
 
 ```bash
-bash &lt;(curl -L -s https://bench.openode.xyz/checker.sh)
+bash (curl -L -s https://bench.openode.xyz/checker.sh)
 ```
 
 ### Use this command for Inst Check:
 
 ```bash
-bash &lt;(curl -L -s https://bench.openode.xyz/checker_inst.sh)
+bash (curl -L -s https://bench.openode.xyz/checker_inst.sh)
 ```
 
 ### MultiCheck Script RU:
 
 ```bash
-bash &lt;(curl -L -s https://bench.openode.xyz/multi_check_ru.sh)
+bash (curl -L -s https://bench.openode.xyz/multi_check_ru.sh)
 ```
 
 ### MultiCheck Script EN:
 
 ```bash
-bash &lt;(curl -L -s https://bench.openode.xyz/multi_check.sh)
+bash (curl -L -s https://bench.openode.xyz/multi_check.sh)
 ```
 ### Media Bench 
 ```bash
