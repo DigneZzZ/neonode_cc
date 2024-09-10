@@ -10,7 +10,7 @@ interface Props {
 	project: CollectionEntry<"project">;
 }
 
-const { project } = Astro.props
+const { project } = Astro.props;
 const { 
 	data: {
 		title,
@@ -18,9 +18,10 @@ const {
 		description,
 		heroImage,
 		platform,
-		stack,
 		website,
-		github
+		github,
+		tgChannel,
+		tgGroup
 }} = project;
 const { headings } = project.render && await project.render();
 const articleDate = pubDate.toISOString();
@@ -43,23 +44,6 @@ const articleDate = pubDate.toISOString();
 					<span>{platform}</span>
 				</li>
 			}
-			{ stack && 
-				<li class="project-frontmatter-item">
-					<small>STACK</small>
-					<ul class="inline-flex gap-2 sm:gap-4">
-						{stack.map((s: string) => ( 
-							<li>
-								<Icon 
-									class="h-6 w-6 text-textColor" 
-									name={`vscode-icons:file-type-${s.toLowerCase()}`} 
-									focusable="false"
-								title={s}
-								/>
-							</li>
-						))}
-					</ul>
-				</li> 
-			}
 			{ website &&
 				<li class="project-frontmatter-item">
 					<small>WEBSITE</small>
@@ -70,6 +54,18 @@ const articleDate = pubDate.toISOString();
 				<li class="project-frontmatter-item">
 					<small>GITHUB</small>
 					<a href={github} target="_blank" class="cody-link">{github}</a>
+				</li>
+			}
+			{ tgChannel &&
+				<li class="project-frontmatter-item">
+					<small>TG CHANNEL</small>
+					<a href={tgChannel} target="_blank" class="cody-link">{tgChannel}</a>
+				</li>
+			}
+			{ tgGroup &&
+				<li class="project-frontmatter-item">
+					<small>TG GROUP</small>
+					<a href={tgGroup} target="_blank" class="cody-link">{tgGroup}</a>
 				</li>
 			}
 		</ul>

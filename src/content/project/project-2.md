@@ -1,16 +1,45 @@
 ---
-title: 'Project 2'
-description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci'
-pubDate: 'Aug 13 2022'
+title: 'Marzban Managed SaaS'
+description: 'Услуга по управлению панелью Marzban с полной технической поддержкой и автоматизированными решениями для вашего удобства.'
+pubDate: 'Jul 11 2024'
 heroImage:
-    url: '/blog-placeholder-about.jpg'
-    alt: 'GitHub wallpaper'
-platform: Web
-stack: ['Astro', 'JS', 'tailwind'] website: https://github.com/kirontoo/astro-theme-cody
-github: https://github.com/kirontoo/astro-theme-cody
+    url: '/images/marzban-saas.jpg'
+    alt: 'Marzban SaaS illustration'
+platform: Telegram
+tgChannel: https://t.me/marzban_saas/
+tgGroup: https://t.me/marzban_msaas/
 order: 2
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus a tortor at molestie. Sed pellentesque leo auctor, auctor lorem nec, venenatis risus. Vivamus commodo ipsum vitae orci finibus, vel porta nunc viverra. In hac habitasse platea dictumst. Nunc pretium, ligula ultricies consequat sollicitudin, enim ex ullamcorper nisl.
+## Marzban Managed SaaS
 
-## hello
+**Marzban Managed SaaS** — это сервис, который упрощает управление панелью Marzban. Мы берем на себя всю техническую работу, связанную с развертыванием и поддержкой панели, обеспечивая надежность, безопасность и стабильность.
+
+### Преимущества:
+- Полная поддержка и обслуживание панели Marzban.
+- Автоматизированные бэкапы базы данных и файлов каждые 3 часа.
+- Настройка зарубежных серверов для безопасной и анонимной работы.
+- Регулярное обновление SSL-сертификатов и мониторинг инфраструктуры.
+
+### Тарифы:
+- **Первый месяц** — от 1000 рублей.
+- **Последующие месяцы** — от 300 рублей (оплата авансом за 3 месяца).
+- Переезд и настройка включены в первый месяц обслуживания.
+
+### Дополнительные услуги:
+- Настройка Xray-конфигурации.
+- Дополнительные бэкапы на S3 или облачные диски.
+- Подключение и настройка нод.
+
+### Ограничения:
+- Запрещена передача доступа к основному серверу.
+- Конфиденциальная информация не подлежит разглашению.
+
+### Ответственность Marzban Managed SaaS:
+- Организация работы на сервере провайдера.
+- Обновление панели и поддержка инфраструктуры.
+- Обеспечение безопасности и конфиденциальности.
+
+### Связь и заявки:
+- Для оформления заявки можно использовать нашего [бота](https://t.me/marzban_saas_bot).
+- Присоединяйтесь к нашей [группе](https://t.me/marzban_msaas), чтобы быть в курсе новостей и получить поддержку.

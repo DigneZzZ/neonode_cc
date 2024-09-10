@@ -7,6 +7,7 @@ heroImage:
     alt: 'GitHub wallpaper'
 platform: Web
 website: https://openode.xyz
+order: 1
 ---
 
 На форуме [openode.xyz](https://openode.xyz) обсуждаются различные темы, связанные с IT, программированием и технологиями. Популярные категории включают:
