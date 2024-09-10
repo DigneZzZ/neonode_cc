@@ -11,7 +11,14 @@ export default defineConfig({
   i18n: {
     defaultLocale: "ru",
     locales: ["ru", "en"],
+    routing: {
+      prefixDefaultLocale: false
+    },
+    fallback: {
+      en: "ru"
+    }
   },
+  
   integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
     remarkPlugins: [remarkReadingTime],
