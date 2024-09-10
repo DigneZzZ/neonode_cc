@@ -44,13 +44,13 @@
 
   :root.dark {
     color-scheme: dark;
-    --theme-bg: #1d1d1d;
+    --theme-bg: #14151f;
     --theme-text: #ededed;
-    --theme-accent: #93e1d4;
-    --theme-accent-2: #545454;
+    --theme-accent: #439278;
+    --theme-accent-2: #4f4f4f;
     --theme-surface: #2f2f2f;
-    --theme-quote: #93e1d4;
-    --theme-highlight: #93e1d4;
+    --theme-quote: #93d1e1;
+    --theme-highlight: #93d1e1;
   }
 
   html {
