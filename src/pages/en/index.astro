@@ -20,9 +20,12 @@ const tech: Array<{ title: string; desc: string; href: string }> = [
 ---
 
 <BaseLayout title="Home">
+	<header>
+		<LanguageSwitcher />
+	  </header>
 	<section class="mt-8 sm:mt-16">
 		<h2 class="title">About NeoNode</h2>
-		<LanguageSwitcher />
+	
 		<p class="mb-4 sm:mb-8">
 			<strong>NeoNode</strong> is a dynamic project aimed at providing useful articles, scripts, and unique IT solutions for a wide range of users. We are developing our blog, an open forum, and a <a href="https://t.me/neonode_cc" target="_blank" class="cody-link">Telegram channel</a>, where we share experiences, developments, and useful materials.
 		</p>

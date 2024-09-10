@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/Base.astro';
 import PostPreview from "@/components/blog/PostPreviewB";
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import { getAllPosts, sortMDByDate, sortMDByPinned } from "@/utils";
 
@@ -20,6 +21,9 @@ const tech: Array<{ title: string; desc: string; href: string }> = [
 ---
 
 <BaseLayout title="Главная">
+	<header>
+		<LanguageSwitcher />
+	  </header>
 	<section class="mt-8 sm:mt-16">
 		<h2 class="title">О проекте NeoNode</h2>
 		<p class="mb-4 sm:mb-8">
