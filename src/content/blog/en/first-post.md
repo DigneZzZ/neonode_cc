@@ -8,7 +8,7 @@ tags:
   - telegram
 series: neonode
 draft: false
-pubDate: 09 10 2024
+pubDate: 10 09 2024
 ---
 
 # Hello everyone!

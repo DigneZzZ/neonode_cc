@@ -4,10 +4,11 @@ import BlogPost from '../../layouts/BlogPost.astro';
 import { getAllPosts } from '@/utils';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
+// Определяем правильный тип для постов
 type Post = {
   slug: string;
   title: string;
-  content: string;
+  content: string; // Поле, которое будет использоваться для отображения контента
 };
 
 // Получаем возможные пути для статических страниц
