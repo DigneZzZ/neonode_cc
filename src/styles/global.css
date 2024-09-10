@@ -41,7 +41,6 @@
     --theme-quote: #dd7878;
     --theme-highlight: #dd7878;
   }
-
   :root.dark {
     color-scheme: dark;
     --theme-bg: #242827;
