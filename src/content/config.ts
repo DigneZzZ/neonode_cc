@@ -61,6 +61,8 @@ const project = defineCollection({
 		platform: z.string().optional(),
 		website: z.string().optional(),
 		github: z.string().optional(),
+		tgChannel: z.string().optional(), // Добавляем TG Channel
+		tgGroup: z.string().optional(),   // Добавляем TG Group
 		draft: z.boolean().optional().default(false),
 		// for pinning projects
 		order: z.number().min(1).max(5).optional()

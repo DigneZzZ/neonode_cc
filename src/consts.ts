@@ -61,10 +61,6 @@ export const NAV_LINKS: Array<{ title: string, path: string }> = [
     path: "/",
   },
   {
-    title: "О проекте",
-    path: "/about",
-  },
-  {
     title: "Блог",
     path: "/blog",
   },
