@@ -1,13 +1,18 @@
 ---
-const url = new URL(Astro.request.url);
+
 import { getAllPosts } from '@/utils';
 import BaseLayout from '../layouts/Base.astro';
-const query = url.searchParams.get('q');
+const url = new URL(Astro.request.url);
+let query = url.searchParams.get('q');
+
+// Если query равно null, задаем пустую строку для предотвращения ошибки
+query = query ? query.toLowerCase() : '';
+
 const allPosts = await getAllPosts();
 
 const results = allPosts.filter((post) =>
-  post.data.title.toLowerCase().includes(query.toLowerCase()) ||
-  post.body.toLowerCase().includes(query.toLowerCase()) // Проверяем контент поста
+  post.data.title.toLowerCase().includes(query) ||
+  post.body.toLowerCase().includes(query) // Проверяем контент поста
 );
 ---
 
