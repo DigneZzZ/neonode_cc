@@ -1,22 +1,42 @@
 ---
-
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 import BlogPost from '../../layouts/BlogPost.astro';
 import { getAllPosts } from '@/utils';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
-export const getStaticPaths = (async () => {
+// Получаем все доступные пути (слуги) для генерации страниц
+export const getStaticPaths: GetStaticPaths = async () => {
 	const blogEntries = await getAllPosts();
 	return blogEntries.map((post) => ({
-		params: { slug: post.slug },
-		props: { post },
+		params: { slug: post.slug }
 	}));
-}) satisfies GetStaticPaths;
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+};
 
+// Типизация для `props`
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+// Получаем данные поста для каждого пути
+export const getStaticProps = async ({ params }) => {
+	const blogEntries = await getAllPosts();
+	const post = blogEntries.find((entry) => entry.slug === params.slug);
+
+	if (!post) {
+		throw new Error(`Post with slug '${params.slug}' not found`);
+	}
+
+	return {
+		props: {
+			post,
+		},
+	};
+};
+
+// Получаем данные поста из `Astro.props`
 const { post } = Astro.props;
 const { Content } = await post.render();
 ---
+
+<!-- Ваши компоненты -->
 <LanguageSwitcher />
 <BlogPost post={post}>
 	<Content />
