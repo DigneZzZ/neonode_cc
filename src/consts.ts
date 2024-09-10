@@ -73,7 +73,7 @@ export const NAV_LINKS: Array<{ title: string, path: string }> = [
     path: '/archive'
   },
   {
-    title: "Серии",
+    title: "Категории",
     path: '/series'
   }
 
