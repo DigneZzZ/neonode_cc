@@ -3,7 +3,7 @@ title: 'Marzban Managed SaaS'
 description: 'Услуга по управлению панелью Marzban с полной технической поддержкой и автоматизированными решениями для вашего удобства.'
 pubDate: 'Jul 11 2024'
 heroImage:
-    url: '/images/marzban-saas.jpg'
+    url: '/images/saas.webp'
     alt: 'Marzban SaaS illustration'
 platform: Telegram
 tgChannel: https://t.me/marzban_saas/
