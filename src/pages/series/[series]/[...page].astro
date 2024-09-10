@@ -31,21 +31,21 @@ const { page } = Astro.props;
 const { series } = Astro.params;
 
 const meta = {
-	title: `Series: ${series}`,
-	description: `View all posts with the series - ${series}`,
+	title: `Categories: ${series}`,
+	description: `View all posts with the category - ${series}`,
 };
 
 const paginationProps = {
 	...(page.url.prev && {
 		prevUrl: {
 			url: page.url.prev,
-			text: `← Previous Series`,
+			text: `← Previous Categories`,
 		},
 	}),
 	...(page.url.next && {
 		nextUrl: {
 			url: page.url.next,
-			text: `Next Series →`,
+			text: `Next Categories →`,
 		},
 	}),
 };

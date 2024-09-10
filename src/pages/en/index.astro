@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import PostPreview from "@/components/blog/PostPreviewB";
+import SocialMediaLinks from "@/components/SocialMediaLinks";
+import { getAllPosts, sortMDByDate, sortMDByPinned } from "@/utils";
+
+const MAX_POSTS = 15;
+const allPosts = await getAllPosts();
+const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+const allPostsByPinned = sortMDByPinned(allPostsByDate);
+
+const tech: Array<{ title: string; desc: string; href: string }> = [
+	{
+		title: "Openode.xyz",
+		desc: "Our community",
+		href: "https://openode.xyz",
+	}
+];
+
+---
+
+<BaseLayout title="Home">
+	<section class="mt-8 sm:mt-16">
+		<h2 class="title">About NeoNode</h2>
+		<p class="mb-4 sm:mb-8">
+			<strong>NeoNode</strong> is a dynamic project aimed at providing useful articles, scripts, and unique IT solutions for a wide range of users. We are developing our blog, an open forum, and a <a href="https://t.me/neonode_cc" target="_blank" class="cody-link">Telegram channel</a>, where we share experiences, developments, and useful materials.
+		</p>
+		<p class="mb-4 sm:mb-8">
+			The project is focused on expanding its audience by offering articles in multiple languages and providing exclusive materials through our <a href="https://t.me/+cFdHT8DiMUA2MWVi" target="_blank" class="cody-link">Telegram bot</a> with flexible subscription options. We strive to make knowledge accessible while maintaining a balance between free and paid content.
+		</p>
+		<p class="mb-4 sm:mb-8">
+			Join NeoNode and stay updated on our latest developments, including support for <a href="https://openode.xyz" target="_blank" class="cody-link">Openode.xyz</a> and the upcoming launch of <a href="https://neonode.cc/projects/msaas" target="_blank" class="cody-link">Marzban SaaS</a>.
+		</p>
+	</section>
+
+	<section class="mt-8 sm:mt-16">
+		<h2 class="title">Articles</h2>
+		<ul class="space-y-4 sm:space-y-2">
+			{allPostsByPinned.map(p => <PostPreview post={p}/>)}
+		</ul>
+	</section>
+
+	<section class="mt-16">
+		<h2 class="title">Useful Links</h2>
+		<ul class="space-y-4 sm:space-y-2">
+			{
+				tech.map(({ href, title, desc }) => (
+					<li>
+						<a
+							href={href}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="cody-link inline-block"
+						>
+							{title}
+						</a>: 
+						<p class="inline-block sm:mt-2">{desc}</p>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</BaseLayout>

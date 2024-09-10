@@ -8,6 +8,10 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://neonode.cc',
+  i18n: {
+    defaultLocale: "ru",
+    locales: ["ru", "en"],
+  },
   integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
     remarkPlugins: [remarkReadingTime],
