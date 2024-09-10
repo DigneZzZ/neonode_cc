@@ -1,0 +1,17 @@
+---
+const currentLanguage = Astro.url.pathname.startsWith('/en') ? 'en' : 'ru';
+
+function switchLanguage(lang) {
+  const newPath = Astro.url.pathname.replace(/^\/(en|ru)/, '');
+  window.location.href = `/${lang}${newPath}`;
+}
+---
+
+<div>
+  <button onClick={() => switchLanguage('ru')} disabled={currentLanguage === 'ru'}>
+    Русский
+  </button>
+  <button onClick={() => switchLanguage('en')} disabled={currentLanguage === 'en'}>
+    English
+  </button>
+</div>
