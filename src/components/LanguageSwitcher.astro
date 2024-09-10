@@ -8,10 +8,11 @@ function switchLanguage(lang: string) {
 ---
 
 <div>
-  <button onclick={() => switchLanguage('ru')} disabled={currentLanguage === 'ru'}>
-    Русский
-  </button>
-  <button onclick={() => switchLanguage('en')} disabled={currentLanguage === 'en'}>
-    English
-  </button>
+  <button id="switch-en" disabled={currentLanguage === 'en'}>English</button>
+  <button id="switch-ru" disabled={currentLanguage === 'ru'}>Русский</button>
+
+  <script is:inline>
+    document.getElementById('switch-en').onclick = () => switchLanguage('en');
+    document.getElementById('switch-ru').onclick = () => switchLanguage('ru');
+  </script>
 </div>
