@@ -106,6 +106,7 @@
   .prose-cody strong {
     font-weight: 700;
   }
+  .prose-sm {font-size: 1rem;}
 
   .prose-cody :where(code):not(:where([class~=not-prose],[class~=not-prose] *)) {
     @apply bg-accent !text-surface px-1 py-0;
