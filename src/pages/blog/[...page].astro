@@ -23,7 +23,7 @@ interface Props {
 const { page, tags } = Astro.props;
 
 const meta = {
-	title: "Статьи",
+	title: "Posts",
 	description: "Здесь можно почитать статьи которые для нас актуальны",
 };
 
@@ -45,7 +45,7 @@ const paginationProps = {
 
 <BaseLayout {...meta}>
 	<section class="cody-bg">
-		<h1 class="title">Posts</h1>
+		<h1 class="title">Статьи</h1>
 		<ul class="flex flex-col gap-4">
 			{
 			page.data.map(post => (
