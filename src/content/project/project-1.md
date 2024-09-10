@@ -1,7 +1,7 @@
 ---
 title: 'Openode.xyz'
 description: 'Сообщество посвященное цифровому миру, домашним сетям'
-pubDate: 'Apr 03 2023'
+pubDate: '01 10 2024'
 heroImage:
     url: '/blog-placeholder-about.jpg'
     alt: 'GitHub wallpaper'
