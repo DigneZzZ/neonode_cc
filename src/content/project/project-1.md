@@ -6,7 +6,6 @@ heroImage:
     url: '/blog-placeholder-about.jpg'
     alt: 'GitHub wallpaper'
 platform: Web
-stack: ['Invision Community']
 website: https://openode.xyz
 ---
 
