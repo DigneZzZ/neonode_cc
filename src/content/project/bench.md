@@ -1,7 +1,7 @@
 ---
 title: 'Bench.Openode.xyz'
 description: 'Постоянно актуализируемый набор бенчмарков'
-pubDate: '10-09-2024'
+pubDate: '09 10 2024'
 heroImage:
     url: '/images/bench.webp'
     alt: 'BENCHMARK SERVER'

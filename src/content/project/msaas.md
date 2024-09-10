@@ -1,7 +1,7 @@
 ---
 title: 'Marzban Managed SaaS'
 description: 'Услуга по управлению панелью Marzban с полной технической поддержкой и автоматизированными решениями для вашего удобства.'
-pubDate: '10-09-2024'
+pubDate: '09 10 2024'
 heroImage:
     url: '/images/saas.webp'
     alt: 'Marzban SaaS illustration'
