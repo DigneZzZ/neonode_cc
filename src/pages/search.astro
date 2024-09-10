@@ -1,0 +1,26 @@
+---
+import { getAllPosts } from '@/utils';
+import BaseLayout from '../layouts/Base.astro';
+const query = Astro.request.url.searchParams.get('q');
+const allPosts = await getAllPosts();
+
+const results = allPosts.filter((post) => 
+  post.data.title.toLowerCase().includes(query.toLowerCase()) || 
+  post.data.content.toLowerCase().includes(query.toLowerCase())
+);
+---
+
+<BaseLayout title="Search Results">
+  <h1>Search Results for "{query}"</h1>
+  {results.length > 0 ? (
+    <ul>
+      {results.map(post => (
+        <li>
+          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p>No results found.</p>
+  )}
+</BaseLayout>

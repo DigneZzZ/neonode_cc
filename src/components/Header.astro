@@ -2,7 +2,7 @@
 import HeaderLink from './HeaderLink.astro';
 import { siteConfig, NAV_LINKS } from '../consts';
 import ThemeToggle from '../components/ThemeToggle.astro';
-
+import SearchBar from '@/components/SearchBar'; // Импорт компонента поиска
 const url = new URL(Astro.request.url);
 ---
 
@@ -45,6 +45,7 @@ const url = new URL(Astro.request.url);
 				data-astro-prefetch
 			>Series</HeaderLink>
 		</div>
+		<SearchBar /> <!-- Вставка компонента строки поиска -->
 	</nav>
 
 	<div class="flex gap-2 items-center justify-center">
