@@ -7,7 +7,6 @@ heroImage:
     alt: 'Marzban SaaS illustration'
 platform: web
 website: https://bench.openode.xyz
-stack: 'php', 'js'
 order: 3
 ---
 
