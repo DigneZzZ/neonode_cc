@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/Base.astro';
 import PostPreview from "@/components/blog/PostPreviewB";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import { getAllPosts, sortMDByDate, sortMDByPinned } from "@/utils";
-
+import { getRelativeLocaleUrl } from 'astro:i18n';
 const MAX_POSTS = 15;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
