@@ -1,9 +1,9 @@
 ---
 title: Ротация логов в Caddy
+description: Разберем, как настроить ротацию логов в Caddy чтобы избежать их
 tags:
   - caddy
   - logs
-description: Разберем, как настроить ротацию логов в Caddy чтобы избежать их
 series: caddy
 draft: false
 pubDate: 09 11 2024
