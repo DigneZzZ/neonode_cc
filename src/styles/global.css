@@ -31,15 +31,15 @@
 
 @layer base {
   :root {
-    color-scheme: light;
     /* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
-    --theme-bg: #616161;
+    color-scheme: light;
+    --theme-bg: #c7c7c7;
     --theme-text: #0f0f0f;
-    --theme-accent: #14fdcf;
-    --theme-accent-2: #bccccd;
-    --theme-surface: #bbbbbb;
-    --theme-quote: #14ddce;
-    --theme-highlight: #14fcfc;
+    --theme-accent: #297369;
+    --theme-accent-2: #347073;
+    --theme-surface: #d5d5d5;
+    --theme-quote: #347073;
+    --theme-highlight: #0d8589;
   }
   :root.dark {
     color-scheme: dark;
