@@ -140,7 +140,6 @@ docker network create --ipv6 --subnet="2001:db8:1::/64" --gateway="2001:db8:1::1
 2. Теперь создайте `docker-compose.yml`, который будет использовать эту сеть:
 
 ```yaml
-version: "3.9"
 services:
   app:
     image: alpine:latest
@@ -155,7 +154,7 @@ networks:
 3. Запустите Compose:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 ### Пример 2: Создание сети и контейнера через Docker Compose
@@ -163,7 +162,6 @@ docker-compose up
 Другой подход — полностью управлять сетью через Compose:
 
 ```yaml
-version: "2.4"
 services:
   app:
     image: alpine:latest
@@ -182,7 +180,7 @@ networks:
 Запустите:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 Этот файл создаст новую сеть с поддержкой IPv6 и запустит контейнер.
