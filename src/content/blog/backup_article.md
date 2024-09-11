@@ -1,4 +1,3 @@
-
 ---
 title: "Автоматическое резервное копирование данных с использованием Rclone и Cloudflare R2"
 description: "Настройка скрипта для резервного копирования данных с Cloudflare R2 и уведомлений в Telegram."
@@ -8,7 +7,7 @@ tags:
   - Backup
   - Bash
   - Crontab
-series: backup-tools
+series: server-tools
 draft: false
 pubDate: 09 12 2024
 ---
