@@ -1,4 +1,3 @@
-
 ---
 title: Как настроить сеть IPv6 в Docker и Docker Compose
 description: Полное руководство по включению IPv6 в Docker и настройке сети с поддержкой IPv6 через Docker Compose для современных приложений.
