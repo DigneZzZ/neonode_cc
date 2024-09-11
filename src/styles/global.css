@@ -33,13 +33,13 @@
   :root {
     color-scheme: light;
     /* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
-    --theme-bg: #efefef;
-    --theme-text: #222222;
-    --theme-accent: #dd7878;
-    --theme-accent-2: #bcc0cd;
-    --theme-surface: #e6e6e6;
-    --theme-quote: #dd7878;
-    --theme-highlight: #dd7878;
+    --theme-bg: #616161;
+    --theme-text: #0f0f0f;
+    --theme-accent: #14fdcf;
+    --theme-accent-2: #bccccd;
+    --theme-surface: #bbbbbb;
+    --theme-quote: #14ddce;
+    --theme-highlight: #14fcfc;
   }
   :root.dark {
     color-scheme: dark;
