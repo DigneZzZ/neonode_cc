@@ -19,7 +19,7 @@ type SocialLink = {
 
 export const siteConfig: Config = {
   title: "Neonode.cc - Mind space blog",
-  description: "",
+  description: "IT Blog",
   lang: "ru-RU",
   profile: {
     author: "TrustMe",
