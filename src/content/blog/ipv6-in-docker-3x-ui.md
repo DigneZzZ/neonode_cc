@@ -1,4 +1,3 @@
-
 ---
 title: Настройка IPv6 для 3x-ui в Docker с использованием bridge-сети
 description: Пошаговое руководство по настройке IPv6 для 3x-ui в Docker-контейнере с bridge-сетью и пример использования Docker Compose для одновременной работы с IPv6 и IPv4.
