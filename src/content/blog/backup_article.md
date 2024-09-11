@@ -49,28 +49,28 @@ Cloudflare R2 – это хранилище объектов, предостав
 ### Установка и настройка Rclone
 
 1. Установите Rclone:
-    ```bash
-    curl https://rclone.org/install.sh | sudo bash
-    ```
+```bash
+curl https://rclone.org/install.sh | sudo bash
+```
 
 2. Настройте Rclone:
-    ```bash
-    rclone config
-    ```
+```bash
+rclone config
+```
 
 3. Следуйте инструкциям для создания нового удаленного подключения:
-    [![image.png](https://openode.xyz/uploads/monthly_2024_05/image.thumb.png.9bfed1df373f093c08740c00626d3dac.png)](https://openode.xyz/uploads/monthly_2024_05/image.png.63153573fb808842bd0a0f633034146f.png)
+[![image.png](https://openode.xyz/uploads/monthly_2024_05/image.thumb.png.9bfed1df373f093c08740c00626d3dac.png)](https://openode.xyz/uploads/monthly_2024_05/image.png.63153573fb808842bd0a0f633034146f.png)
 
-    - Remote name: `s3cf`
-    - Storage: `s3`
-    - AWS Access Key ID: `YOUR_CLOUDFLARE_ACCESS_KEY`
-    - AWS Secret Access Key: `YOUR_CLOUDFLARE_SECRET_KEY`
-    - Endpoint: `https://<account-id>.r2.cloudflarestorage.com`
+- Remote name: `s3cf`
+- Storage: `s3`
+- AWS Access Key ID: `YOUR_CLOUDFLARE_ACCESS_KEY`
+- AWS Secret Access Key: `YOUR_CLOUDFLARE_SECRET_KEY`
+- Endpoint: `https://<account-id>.r2.cloudflarestorage.com`
 
-    [![image.png](https://openode.xyz/uploads/monthly_2024_05/image.thumb.png.5d6d6c30634c50cb9ceca219165d2f41.png)](https://openode.xyz/uploads/monthly_2024_05/image.png.0a052fef3da53cef90e1d712b21aec5d.png)
+[![image.png](https://openode.xyz/uploads/monthly_2024_05/image.thumb.png.5d6d6c30634c50cb9ceca219165d2f41.png)](https://openode.xyz/uploads/monthly_2024_05/image.png.0a052fef3da53cef90e1d712b21aec5d.png)
 
 4. Когда нужно будет указать в последнем этапе endpoint, вы можете взять их из настроек бакета.
-    [![image.png](https://openode.xyz/uploads/monthly_2024_05/image.thumb.png.e04e748f2a65331e59545068b2fecc09.png)](https://openode.xyz/uploads/monthly_2024_05/image.png.2ea379c88ee8599d7c7cb77cf459483f.png)
+[![image.png](https://openode.xyz/uploads/monthly_2024_05/image.thumb.png.e04e748f2a65331e59545068b2fecc09.png)](https://openode.xyz/uploads/monthly_2024_05/image.png.2ea379c88ee8599d7c7cb77cf459483f.png)
 
 Готово!
 
@@ -85,67 +85,67 @@ rclone ls s3cf:openode
 ### Создание и настройка bash-скрипта
 
 1. Создайте файл скрипта `backup_script.sh` в папке `/root/`:
-    ```bash
-    nano /root/backup_script.sh
-    ```
+```bash
+nano /root/backup_script.sh
+```
 
 2. Вставьте следующий код в скрипт:
 
-    ```bash
-    #!/bin/bash
+```bash
+#!/bin/bash
 
-    # Переменные для Telegram
-    TELEGRAM_BOT_TOKEN="YOUR_TELEGRAM_BOT_TOKEN"
-    TELEGRAM_CHAT_ID="YOUR_TELEGRAM_CHAT_ID"
+# Переменные для Telegram
+TELEGRAM_BOT_TOKEN="YOUR_TELEGRAM_BOT_TOKEN"
+TELEGRAM_CHAT_ID="YOUR_TELEGRAM_CHAT_ID"
 
-    # Папки для архивации
-    SRC_DIRS=("/opt/marzban" "/var/lib/marzban")
+# Папки для архивации
+SRC_DIRS=("/opt/marzban" "/var/lib/marzban")
 
-    # Папка для хранения архива
-    DEST_DIR="/root"
+# Папка для хранения архива
+DEST_DIR="/root"
 
-    # Имя архива с датой и временем
-    DATE=$(date +'%Y-%m-%d_%H-%M-%S')
-    ARCHIVE_NAME="OPENODE_backup_$DATE.zip"
-    ARCHIVE_PATH="$DEST_DIR/$ARCHIVE_NAME"
+# Имя архива с датой и временем
+DATE=$(date +'%Y-%m-%d_%H-%M-%S')
+ARCHIVE_NAME="OPENODE_backup_$DATE.zip"
+ARCHIVE_PATH="$DEST_DIR/$ARCHIVE_NAME"
 
-    # Создание архива
-    zip -r "$ARCHIVE_PATH" "${SRC_DIRS[@]}"
+# Создание архива
+zip -r "$ARCHIVE_PATH" "${SRC_DIRS[@]}"
 
-    # Целевая папка в Cloudflare R2
-    TARGET_DIR="s3cf:openode/"
+# Целевая папка в Cloudflare R2
+TARGET_DIR="s3cf:openode/"
 
-    # Функция для отправки уведомления в Telegram
-    send_telegram_message() {
-        local MESSAGE=$1
-        curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"         -d chat_id="${TELEGRAM_CHAT_ID}" -d text="${MESSAGE}"
-    }
+# Функция для отправки уведомления в Telegram
+send_telegram_message() {
+    local MESSAGE=$1
+    curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"         -d chat_id="${TELEGRAM_CHAT_ID}" -d text="${MESSAGE}"
+}
 
-    # Загрузка архива в Cloudflare R2 и отправка уведомления
-    if rclone copy "$ARCHIVE_PATH" "$TARGET_DIR"; then
-        send_telegram_message "Архив $ARCHIVE_NAME успешно загружен в Cloudflare R2."
-        rm "$ARCHIVE_PATH"
-    else
-        send_telegram_message "Ошибка при загрузке архива $ARCHIVE_NAME в Cloudflare R2."
-    fi
+# Загрузка архива в Cloudflare R2 и отправка уведомления
+if rclone copy "$ARCHIVE_PATH" "$TARGET_DIR"; then
+    send_telegram_message "Архив $ARCHIVE_NAME успешно загружен в Cloudflare R2."
+    rm "$ARCHIVE_PATH"
+else
+    send_telegram_message "Ошибка при загрузке архива $ARCHIVE_NAME в Cloudflare R2."
+fi
 
-    # Ротация архивов в Cloudflare R2 (оставить только за последние 7 дней)
-    rclone delete --min-age 7d "$TARGET_DIR"
-    ```
+# Ротация архивов в Cloudflare R2 (оставить только за последние 7 дней)
+rclone delete --min-age 7d "$TARGET_DIR"
+```
 
 3. Сделайте скрипт исполняемым:
-    ```bash
-    chmod +x /root/backup_script.sh
-    ```
+```bash
+chmod +x /root/backup_script.sh
+```
 
 4. Настройте crontab для регулярного выполнения:
-    ```bash
-    crontab -e
-    ```
+```bash
+crontab -e
+```
 
-    Добавьте следующую строку:
-    ```bash
-    0 */4 * * * /root/backup_script.sh > /dev/null 2>&1
-    ```
+Добавьте следующую строку:
+```bash
+0 */4 * * * /root/backup_script.sh > /dev/null 2>&1
+```
 
 Готово! Скрипт будет выполняться каждые 4 часа и уведомления будут приходить в Telegram.
