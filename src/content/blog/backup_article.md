@@ -42,7 +42,7 @@ Cloudflare R2 – это объектное хранилище, предоста
 
 Прежде чем начать использовать Cloudflare R2, нужно привязать банковскую карту к аккаунту.
 
-![Cloudflare R2](https://openode.xyz/uploads/monthly_2024_05/image.thumb.png.351bdc0c20bd4a4851fcf04df53ef2e0.png)
+![Cloudflare R2](https://openode.xyz/uploads/monthly_2024_05/image.png.d33a9c2aaac69e7c14ae73a220b204c1.png)
 
 Если карта РФ не принимается, можно воспользоваться сервисом Cashinout для верификации в Cloudflare.
 
@@ -62,7 +62,7 @@ rclone config
 
 ### Шаг 3: Создание нового подключения
 
-![Rclone Setup](https://openode.xyz/uploads/monthly_2024_05/image.thumb.png.9bfed1df373f093c08740c00626d3dac.png)
+![Rclone Setup](https://openode.xyz/uploads/monthly_2024_05/image.png.63153573fb808842bd0a0f633034146f.png)
 
 - Название подключения: `s3cf`
 - Тип хранилища: `s3`
@@ -70,11 +70,11 @@ rclone config
 - AWS Secret Access Key: `YOUR_CLOUDFLARE_SECRET_KEY`
 - Endpoint: `https://<account-id>.r2.cloudflarestorage.com`
 
-![Rclone Config](https://openode.xyz/uploads/monthly_2024_05/image.thumb.png.5d6d6c30634c50cb9ceca219165d2f41.png)
+![Rclone Config](https://openode.xyz/uploads/monthly_2024_05/image.png.0a052fef3da53cef90e1d712b21aec5d.png)
 
 ### Шаг 4: Убедитесь, что настройки бакета совпадают
 
-![Bucket Setup](https://openode.xyz/uploads/monthly_2024_05/image.thumb.png.e04e748f2a65331e59545068b2fecc09.png)
+![Bucket Setup](https://openode.xyz/uploads/monthly_2024_05/image.png.2ea379c88ee8599d7c7cb77cf459483f.png)
 
 ## Тестирование подключения
 
