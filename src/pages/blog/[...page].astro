@@ -5,7 +5,6 @@ import BaseLayout from "@/layouts/Sidebar";
 import PostPreview from "@/components/blog/PostPreviewA";
 import Pagination from "@/components/Pagination";
 import { getAllPosts, getUniqueTags, sortMDByDate, sortMDByPinned } from "@/utils";
-import { getFormattedDate } from '@/utils/date'; // Импортируем функцию для форматирования даты
 
 export const getStaticPaths = (async ({ paginate }) => {
 	// grab all posts besides drafts and hidden ones
@@ -50,12 +49,7 @@ const paginationProps = {
 		<ul class="flex flex-col gap-4">
 			{
 			page.data.map(post => (
-				<PostPreview post={post} withDesc>
-					<!-- Форматируем дату для каждого поста -->
-					<p class="text-gray-600 text-sm font-medium">
-						Дата публикации: <span class="text-blue-500 font-bold">{getFormattedDate(post.data.date)}</span>
-					</p>
-				</PostPreview>
+				<PostPreview post={post} withDesc/>
 			))
 			}
 		</ul>

@@ -1,8 +1,8 @@
 ---
+
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 import BlogPost from '../../layouts/BlogPost.astro';
 import { getAllPosts } from '@/utils';
-import { getFormattedDate } from '@/utils/date'; // Импорт функции форматирования даты
 
 export const getStaticPaths = (async () => {
 	const blogEntries = await getAllPosts();
@@ -15,15 +15,8 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { post } = Astro.props;
 const { Content } = await post.render();
-
-// Форматируем дату поста
-const formattedDate = getFormattedDate(post.date);
 ---
 
 <BlogPost post={post}>
-	<!-- Добавляем форматированную дату -->
-	<p class="text-gray-600 text-sm font-medium">
-		Дата публикации: <span class="text-blue-500 font-bold">{formattedDate}</span>
-	</p>
 	<Content />
 </BlogPost>
