@@ -38,12 +38,12 @@ export const socialLinks: Array<SocialLink> = [
     friendlyName: "Github",
     link: "https://github.com/dignezzz",
   },
- /**  {
-    icon: "mdi:linkedin",
-    friendlyName: "LinkedIn",
-    link: "#",
+ {
+    icon: "mdi:telegram",
+    friendlyName: "Telegram",
+    link: "https://t.me/+cFdHT8DiMUA2MWVi",
   },
-  {
+ /**   {
     icon: "mdi:email",
     friendlyName: "email",
     link: "mailto:ndangamy@gmail.com",
@@ -57,23 +57,19 @@ export const socialLinks: Array<SocialLink> = [
 
 export const NAV_LINKS: Array<{ title: string, path: string }> = [
   {
-    title: "Главная",
+    title: "Main",
     path: "/",
   },
   {
-    title: "Блог",
+    title: "Blog",
     path: "/blog",
   },
   {
-    title: "Архивы",
+    title: "Аrchive",
     path: '/archive'
   },
   {
-    title: "Категории",
-    path: '/series'
-  },
-  {
-    title: "Проекты",
+    title: "My Projects",
     path: '/projects'
   }
 ];
