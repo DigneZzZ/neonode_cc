@@ -7,7 +7,7 @@ tags:
   - Backup
   - Bash
   - Crontab
-series: backup-tools
+series: server-tools
 draft: false
 pubDate: 09 12 2024
 ---
