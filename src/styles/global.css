@@ -68,6 +68,11 @@
   /*
   * CSS for markdown and MDX blog posts
   */
+
+  .prose-cody pre {
+    @apply text-1.05rem;
+  }
+
   .prose-cody p {
     font-size: 1rem; /* Пример размера для текста внутри параграфов */
     line-height: 1.75rem;
@@ -110,12 +115,7 @@
   .prose-cody strong {
     font-weight: 700;
   }
-  .prose-cody code,
-  .prose-cody pre {
-    font-size: 1rem; /* Измените это значение на нужный вам размер */
-    line-height: 1.5rem;
-  }
-  
+ 
   .prose-cody pre {
     @apply p-4; /* Добавление отступов для улучшения читаемости */
   }
