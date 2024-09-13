@@ -28,7 +28,7 @@ const articleDate = pubDate.toISOString();
 ---
 <SidebarLayout title={title} description={description} articleDate={articleDate}>
 	<!-- Добавили элемент <article> с нужными классами -->
-	<article class="cody-bg prose dark:prose-invert prose-cody text-textColor max-w-4xl space-y-2 sm:space-y-4">
+
 		<h2 class="title">{title}</h2>
 
 		{
@@ -70,7 +70,7 @@ const articleDate = pubDate.toISOString();
 				</li>
 			}
 		</ul>
-
+		<article class="cody-bg prose dark:prose-invert prose-cody text-textColor max-w-4xl space-y-2 sm:space-y-4">
 		<hr/>
 
 		<!-- Обернули контент в <main> с соответствующими классами -->
