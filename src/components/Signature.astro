@@ -27,22 +27,37 @@
     }
   
     .cody-link {
-      @apply text-blue-600 hover:text-blue-800;
-      @apply transition-colors duration-300;
-      text-decoration: none; /* Убирает подчеркивание */
+      @apply no-underline text-accent;
+      position: relative;
+      background-image: linear-gradient(
+        transparent,
+        transparent 70%,
+        var(--theme-accent) 70%,
+        var(--theme-accent) 75%,
+        transparent 75%
+      );
+      background-repeat: no-repeat;
+      background-size: 100% 1px;
+      transition: background-size 0.3s ease-in-out;
+    }
+  
+    .cody-link:hover {
+      background-size: 100% 100%;
+      color: var(--theme-accent-2);
     }
   
     .cody-link::before {
-      content: "→ "; /* Добавляет стрелку перед ссылкой */
-      @apply text-blue-600;
+      content: "→ ";
+      color: var(--theme-accent);
+      transition: color 0.3s ease-in-out;
     }
   
     .cody-link:hover::before {
-      @apply text-blue-800;
+      color: var(--theme-accent-2);
     }
   
     hr {
-      @apply border-t border-gray-300;
+      @apply border-accent border-dashed my-4;
     }
   </style>
   
