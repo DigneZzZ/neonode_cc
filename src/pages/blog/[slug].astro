@@ -3,6 +3,7 @@
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 import BlogPost from '../../layouts/BlogPost.astro';
 import { getAllPosts } from '@/utils';
+import Signature from '@/components/Signature';
 
 export const getStaticPaths = (async () => {
 	const blogEntries = await getAllPosts();
@@ -19,4 +20,5 @@ const { Content } = await post.render();
 
 <BlogPost post={post}>
 	<Content />
+    <Signature />
 </BlogPost>
