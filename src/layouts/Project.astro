@@ -27,7 +27,8 @@ const { headings } = project.render && await project.render();
 const articleDate = pubDate.toISOString();
 ---
 <SidebarLayout title={title} description={description} articleDate={articleDate}>
-	<section class="cody-bg space-y-2 sm:space-y-4">
+	<!-- Добавили элемент <article> с нужными классами -->
+	<article class="cody-bg prose dark:prose-invert prose-cody text-textColor max-w-4xl space-y-2 sm:space-y-4">
 		<h2 class="title">{title}</h2>
 
 		{
@@ -72,11 +73,12 @@ const articleDate = pubDate.toISOString();
 
 		<hr/>
 
-		<div class="prose dark:prose-invert prose-base prose-headings:font-semibold prose-headings:ml-4 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent prose-headings:before:content-['#'] prose-th:before:content-none">
+		<!-- Обернули контент в <main> с соответствующими классами -->
+		<main class="prose-base prose-headings:font-semibold prose-headings:ml-4 prose-headings:before:absolute prose-headings:before:-ml-4 prose-headings:before:text-accent prose-headings:before:content-['#'] prose-th:before:content-none prose-a:text-accent">
 			<slot />
-		</div>
+		</main>
 
-	</section>
+	</article>
 	<aside slot="sidebar">
 		<div class="flex flex-col space-y-2">
 			<h2 class="font-semibold text-base text-textColor">{siteConfig.profile.author}</h2>
@@ -91,4 +93,12 @@ const articleDate = pubDate.toISOString();
 	</aside>	
 </SidebarLayout>
 
+<style>
+	small {
+		@apply text-bgColor px-1 bg-accent mr-2 font-semibold min-w-[95px];
+	}
 
+	.project-frontmatter-item {
+		@apply flex flex-col gap-x-0 sm:flex-row;
+	}
+</style>
