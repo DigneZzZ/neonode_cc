@@ -1,41 +1,42 @@
 ---
-// Signature.astro
+import { siteConfig } from '../consts';
+import SidebarLayout from './Sidebar.astro';
+import { Icon } from "astro-icon";
+// Если у вас есть дополнительные зависимости, импортируйте их здесь
 ---
-<div class="signature">
+
+<SidebarLayout title="Спасибо за чтение!" description="Посетите мои проекты:">
+  <section class="cody-bg space-y-2 sm:space-y-4">
     <!-- Разделитель -->
     <hr />
+
     <!-- Контент подписи -->
-    <p>Спасибо за чтение! Посетите мои проекты:</p>
-    <ul>
-      <li><a href="https://example-referral.com">Реферальный проект 1</a></li>
-      <li><a href="https://your-website.com">Мой личный сайт</a></li>
+    <ul class="space-y-2">
+      <li class="signature-item">
+        <small>Мой сайт</small>
+        <a href="https://your-website.com" target="_blank" class="cody-link">your-website.com</a>
+      </li>
+      <li class="signature-item">
+        <small>Реферальный проект 1</small>
+        <a href="https://your-referral-link.com" target="_blank" class="cody-link">Referral Project 1</a>
+      </li>
       <!-- Добавьте другие ссылки по необходимости -->
     </ul>
-  </div>
-  
-  <style>
-    .signature {
-      margin-top: 20px;
-      font-size: 0.9em;
-      color: #555;
-    }
-  
-    .signature ul {
-      list-style-type: none;
-      padding: 0;
-    }
-  
-    .signature li {
-      margin-bottom: 5px;
-    }
-  
-    .signature a {
-      color: #007acc;
-      text-decoration: none;
-    }
-  
-    .signature a:hover {
-      text-decoration: underline;
-    }
-  </style>
-  
+
+  </section>
+
+  <!-- Если у вас есть боковая панель или дополнительные элементы -->
+  <!-- <aside slot="sidebar">
+    <!-- Дополнительный контент -->
+  <!-- </aside> -->
+</SidebarLayout>
+
+<style>
+  small {
+    @apply text-bgColor px-1 bg-accent mr-2 font-semibold min-w-[95px];
+  }
+
+  .signature-item {
+    @apply flex flex-col gap-x-0 sm:flex-row;
+  }
+</style>
