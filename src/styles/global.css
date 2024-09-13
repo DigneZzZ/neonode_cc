@@ -53,8 +53,8 @@
   }
 
   .prose-base :where(pre):not(:where([class~=not-prose],[class~=not-prose] *)) {
-    font-size: 1.10em;
-    line-height: 1.75;
+    font-size: 1.10em !important;
+    line-height: 1.75 !important;
 }
 
   html {
