@@ -28,6 +28,17 @@
   
     .cody-link {
       @apply text-blue-600 hover:text-blue-800;
+      @apply transition-colors duration-300;
+      text-decoration: none; /* Убирает подчеркивание */
+    }
+  
+    .cody-link::before {
+      content: "→ "; /* Добавляет стрелку перед ссылкой */
+      @apply text-blue-600;
+    }
+  
+    .cody-link:hover::before {
+      @apply text-blue-800;
     }
   
     hr {
