@@ -72,14 +72,14 @@ const articleDate = pubDate.toISOString();
 
 		<hr/>
 
-		<div class="prose dark:prose-invert !prose-base prose-headings:font-semibold prose-headings:ml-4 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent prose-headings:before:content-['#'] prose-th:before:content-none">
+		<div class="prose dark:prose-invert !text-lg prose-headings:font-semibold prose-headings:ml-4 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent prose-headings:before:content-['#'] prose-th:before:content-none">
 			<slot />
 		</div>
 
 	</section>
 	<aside slot="sidebar">
 		<div class="flex flex-col space-y-2">
-			<h2 class="font-semibold text-base text-textColor">{siteConfig.profile.author}</h2>
+			<h2 class="font-semibold !text-base text-textColor">{siteConfig.profile.author}</h2>
 			{siteConfig.profile.description && (<p>{siteConfig.profile.description}</p>)}
 			<SocialMediaLinks/>
 			<span class="!my-4 text-accent" aria-hidden>---</span>
