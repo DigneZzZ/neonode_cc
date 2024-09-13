@@ -1,15 +1,9 @@
----
-
-// Если у вас есть дополнительные зависимости, импортируйте их здесь
----
-
-
-  <section class="cody-bg space-y-2 sm:space-y-4">
+<section class="cody-bg space-y-1 sm:space-y-2">
     <!-- Разделитель -->
-    <hr />
-
+    <hr class="my-2" />
+  
     <!-- Контент подписи -->
-    <ul class="space-y-2">
+    <ul class="space-y-1">
       <li class="signature-item">
         <small>Мой сайт</small>
         <a href="https://your-website.com" target="_blank" class="cody-link">your-website.com</a>
@@ -20,21 +14,24 @@
       </li>
       <!-- Добавьте другие ссылки по необходимости -->
     </ul>
-
   </section>
-
-  <!-- Если у вас есть боковая панель или дополнительные элементы -->
-  <!-- <aside slot="sidebar">
-
-  <!-- </aside> -->
-
-
-<style>
-  small {
-    @apply text-bgColor px-1 bg-accent mr-2 font-semibold min-w-[95px];
-  }
-
-  .signature-item {
-    @apply flex flex-col gap-x-0 sm:flex-row;
-  }
-</style>
+  
+  <style>
+    small {
+      @apply text-bgColor px-1 bg-accent mr-1 font-semibold min-w-[75px];
+    }
+  
+    .signature-item {
+      @apply flex flex-col gap-x-0 sm:flex-row items-start;
+      @apply text-sm; /* Уменьшить размер шрифта */
+    }
+  
+    .cody-link {
+      @apply text-blue-600 hover:text-blue-800;
+    }
+  
+    hr {
+      @apply border-t border-gray-300;
+    }
+  </style>
+  
