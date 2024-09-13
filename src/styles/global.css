@@ -115,10 +115,9 @@
   .prose-cody strong {
     font-weight: 700;
   }
-  .prose-cody :where(code):not(:where([class~=not-prose], [class~=not-prose] *)),
-  .prose-sm :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+   .prose-sm :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
      /* if using tailwindcss, add the font-size here */
-    @apply bg-accent !text-surface px-1 py-0 !text-lg;
+    @apply bg-accent !text-surface px-1 py-0 !text-base;
 
     /* OR
     font-size: 20px !important;
