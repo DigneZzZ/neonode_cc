@@ -28,7 +28,7 @@ const articleDate = pubDate.toISOString();
 ---
 <SidebarLayout title={title} description={description} articleDate={articleDate}>
 	<!-- Добавили элемент <article> с нужными классами -->
-	<article class="cody-bg prose dark:prose-invert prose-cody">
+	<article class="prose-cody text-textColor max-w-4xl space-y-2 sm:space-y-4">
 		<h2 class="title">{title}</h2>
 
 		{
@@ -38,33 +38,33 @@ const articleDate = pubDate.toISOString();
 			</div>
 		}
 
-		<ul class="space-y-2">
+		<ul class="!space-y-2">
 			{ platform && 
-				<li class="project-frontmatter-item">
+				<li class="!project-frontmatter-item">
 					<small>PLATFORM</small>
 					<span>{platform}</span>
 				</li>
 			}
 			{ website &&
-				<li class="project-frontmatter-item">
+				<li class="!project-frontmatter-item">
 					<small>WEBSITE</small>
 					<a href={website} target="_blank" class="cody-link">{website}</a>
 				</li>
 			}
 			{ github && 
-				<li class="project-frontmatter-item">
+				<li class="!project-frontmatter-item">
 					<small>GITHUB</small>
 					<a href={github} target="_blank" class="cody-link">{github}</a>
 				</li>
 			}
 			{ tgChannel &&
-				<li class="project-frontmatter-item">
+				<li class="!project-frontmatter-item">
 					<small>TG CHANNEL</small>
 					<a href={tgChannel} target="_blank" class="cody-link">{tgChannel}</a>
 				</li>
 			}
 			{ tgGroup &&
-				<li class="project-frontmatter-item">
+				<li class="!project-frontmatter-item">
 					<small>TG GROUP</small>
 					<a href={tgGroup} target="_blank" class="cody-link">{tgGroup}</a>
 				</li>
