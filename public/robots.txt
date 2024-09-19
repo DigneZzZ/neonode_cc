@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /404/
+Disallow: /drafts/
+Disallow: /private/
+Disallow: /temp/
+
+Allow: /
+
+Sitemap: https://neonode.cc/sitemap-index.xml
