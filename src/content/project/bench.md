@@ -45,3 +45,7 @@ bash (curl -L -s https://bench.openode.xyz/multi_check.sh)
 ```bash
 bash <(curl -L -s check.unlock.media) -E en
 ```
+### Access bench
+```bash
+bash <(curl -Ls IP.Check.Place) -l en
+```
